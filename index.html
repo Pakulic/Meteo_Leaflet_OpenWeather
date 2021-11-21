@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Lien pour la feuille de style (css) -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Lien pour ajouter la map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+  <!-- Titre de la page -->
+  <title>TP geolocalisation</title>
+</head>
+
+<body>
+  <main id="affichage">
+    <section class="boutons">
+      <button id="localisation"><i class="fas fa-map-marked-alt"></i><br>Me localiser</button>
+      <button id="marqueur"><i class="fas fa-thumbtack"></i><br>ajouter marqueur</button>
+    </section>
+  </main>
+
+  <!-- script pour les interactions avec la map-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <!-- lien vers le fichier js-->
+  <script src="js/index.js"></script>
+  <!-- script pour les icones-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

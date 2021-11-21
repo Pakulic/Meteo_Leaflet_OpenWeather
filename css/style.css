@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  border: 0;
+}
+
+/*main qui contient la carte*/
+#affichage {
+  width: 100%;
+  height: 100%;
+}
+
+/* section pour positionner les boutons*/
+.boutons {
+  display: flex;
+  flex-direction: row;
+  z-index: 999;
+  position: absolute;
+  right: 0;
+}
+
+/* bouton pour géocaliser*/
+#localisation {
+  padding: 1em;
+  width: 60%;
+  border: 2px double #AAD3DF;
+}
+
+/* bouton pour ajouter un marqueur*/
+#marqueur {
+  padding: 1em;
+  width: 60%;  
+  border: 2px double #AAD3DF;
+}
+
+/* class appelé en js pour afficher le bouton #marqueur comme actif */
+#marqueur.active {
+  background-color: #AAD3DF;
+  border: 2px double white;
+  cursor: pointer;
+}
+
+/* class qui est donnée lorsqu'on inspecte le code du pop-up */
+div.leaflet-popup-content-wrapper {
+  border: 2px double white;
+  background-color: #AAD3DF;
+  font-size: 12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* suppression des marges entre les balises paragraphes <p> */
+div.leaflet-popup-content-wrapper p {
+  margin: 0;
+}
+
+/* class qui est donnée lorsqu'on inspecte le code du popup */
+.icone {
+  text-align: center;
+}
