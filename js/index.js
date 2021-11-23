@@ -64,7 +64,7 @@ function error(err) {
 function getMeteo(marker, lat, long) {
 	//collecter les informations météo via l'API pour ses coordonnées
 	fetch(
-		`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c8e87e8006e651c90643bfc35c5ebeae`,
+		// `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c8e87e8006e651c90643bfc35c5ebeae`,
 	)
 		// si j'obients une réponse, je mets les réponses en .json
 		.then(response => response.json())
