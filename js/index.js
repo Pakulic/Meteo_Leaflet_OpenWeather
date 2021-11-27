@@ -29,11 +29,11 @@ MAP.addEventListener('click', e => {
 	// lorsque le bouton "ajout de marqueur est activé" (class css active)
 	if (BTNMAPMARKER.classList.contains('active')) {
 		/* la document de Leaflet  https://leafletjs.com/examples/quick-start/
-		précise comment récupérer les coordonnées de l'évenement (clic)=> avec e.latlng. On fait ensuite un "console.log" pour voir comment récupèrer la longitude et la latitude :
+		précise comment récupérer les coordonnées de l'événement (clic)=> avec e.latlng. On fait ensuite un "console.log" pour voir comment récupèrer la longitude et la latitude :
 		console.log(e.latlng); */
 		//  je récupère les coordonnées de l'événement et je les ajoute au marqueur "L.marker" et à la map "addTo(Map)":
 		let mapMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(MAP);
-		// j'éxecute la fonction getMeteo qui va récuperer les informations de météi via une API sur openweathermap
+		// j'éxecute la fonction getMeteo qui va récupérer les informations de météo via une API sur openweathermap
 		getMeteo(mapMarker, e.latlng.lat, e.latlng.lng);
 	}
 });
@@ -41,17 +41,17 @@ MAP.addEventListener('click', e => {
 // LES FONCTIONS
 // fonction en cas de succès de géolocalisation
 function success(pos) {
-	// je selectionne les coordonnées dans les informations de positions
+	// je selectionne les coordonnées dans les informations de position
 	let coord = pos.coords;
 	// je déclare une variable pour la latitude et une pour la longitude
 	let lat = coord.latitude;
 	let long = coord.longitude;
-	//je créeé un marqueur pour les coordonnées et le rajouter dans la map
+	//je crée un marqueur pour les coordonnées et je l'affiche dans la map
 	//https://leafletjs.com/reference-0.7.7.html#marker
 	let marker = L.marker(L.latLng(lat, long)).addTo(MAP);
 	// je centre la vue de la map sur les coordonnées
 	MAP.setView([lat, long], 13);
-	// j'éxecute la fonction getMeteo qui va récuperer les informations de météi via une API sur openweathermap
+	// j'exécute la fonction getMeteo qui va récuperer les informations de météo via une API sur openweathermap
 	getMeteo(marker, lat, long);
 }
 
@@ -66,7 +66,7 @@ function getMeteo(marker, lat, long) {
 	fetch(
 		// `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c8e87e8006e651c90643bfc35c5ebeae`,
 	)
-		// si j'obients une réponse, je mets les réponses en .json
+		// si j'obtiens une réponse, je mets les réponses en .json
 		.then(response => response.json())
 		//puis j'execute la fonction suivante
 		.then(response => {
@@ -80,7 +80,7 @@ function getMeteo(marker, lat, long) {
 		});
 }
 
-// je créé une fonction pour afficher la popup
+// je crée une fonction pour afficher la popup
 function setpopup(marker, response, lat, long) {
 	// je déclare deux variables pour simplifier l'appel des informations (réponses) dans la pop-up
 	let meteo = response.weather[0];
